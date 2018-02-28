@@ -3,6 +3,7 @@
 
 #### From source 
 [Install and compile geth ethereum](https://www.youtube.com/watch?v=1ZTQaXSENNs)
+[you can get the latest go](../build/go,md)
 ```
 sudo apt-get install golang make -y
 
@@ -15,6 +16,8 @@ make geth
 
 https://ethereum.github.io/go-ethereum/downloads/
 tar xfv ...tar.gz 
+
+### [From PPA](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu)
 
 #### start the testnet 
 ```
