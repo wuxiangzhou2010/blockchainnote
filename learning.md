@@ -4,4 +4,4 @@
 - IPFS and [file coin 官方文档](https://filecoin.io/filecoin.pdf)   50%
 - nodejs/npm
 - [golang udemy](https://www.udemy.com/go-the-complete-developers-guide/) 75%
-- [algorithm](https://www.udemy.com/coding-interview-bootcamp-algorithms-and-data-structure) 0%
+- [algorithm udemy](https://www.udemy.com/coding-interview-bootcamp-algorithms-and-data-structure) 0%
