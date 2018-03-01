@@ -18,3 +18,4 @@ public/private/internal/external
 
 [wiki](https://github.com/ethereum/wiki/wiki)
 [create private test network](https://omarmetwally.blog/2017/07/25/how-to-create-a-private-ethereum-network/)
+[miner](https://github.com/ethereum-mining/ethminer)
