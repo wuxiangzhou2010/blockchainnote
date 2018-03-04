@@ -12,6 +12,12 @@ cd go-ethereum
 git checkout release/1.6
 make geth
 ```
+
+the go way
+
+```
+go get -u github.com/ethereum/go-ethereum/cmd/geth
+```
 #### From bin
 
 https://ethereum.github.io/go-ethereum/downloads/
