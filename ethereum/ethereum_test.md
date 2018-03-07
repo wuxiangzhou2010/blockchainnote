@@ -66,3 +66,6 @@ required port
     30304 UDP, used by the P2P protocol's new peer discovery overlay
 
 ```
+
+
+[JSON-RCP](https://github.com/ethereum/wiki/wiki/JSON-RPC)
