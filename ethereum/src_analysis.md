@@ -17,8 +17,26 @@
 - elliptic curve  ECDSA
 
 #### accounts: 
-
 account and wallet 硬件钱包， keystore
+
+```
+type Account struct {
+    Address common.Address
+    URL URL
+}
+```
+```
+type Wallet interface {
+    Open(passphrase string) error
+    Close() error
+    Accounts() []Account
+    Contains(account Account) bool
+    SignTx
+    SignHashWithPassphrase
+    SignTxWithPassphrase
+    ...
+}
+```
 
 #### bmt :   
     
