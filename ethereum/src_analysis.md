@@ -166,3 +166,19 @@ type Config struct {
     
 ## Architecture
 http://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/architecture.html
+
+
+
+
+[[以太坊源代码分析] I.区块和交易，合约和虚拟机](http://blog.csdn.net/teaspring/article/details/75389151?locationNum=3&fps=1)
+
+RLP（Recursive Length Prefix）编码, 它可以将一个任意嵌套的字节数组([]byte)，编码成一个“展平”无嵌套的[]byte。1 byte取值范围0x00 ～ 0xff，可以表示任意字符，所以[]byte可以线性的表示任意的数据。最简单比如一个字符串，如果每个字符用ASCII码的二进制表示，整个字符串就变成一个[]byte。 RLP 编码其实提供了一种序列化的编码方法，无论输入是何种嵌套形式的元素或数组，编码输出形式都是[]byte。RLP是可逆的，它提供了互逆的编码、解码方法。
+Ethereum 中具体使用的哈希算法，就是对某个类型对象的RLP编码值做了SHA3哈希运算，可称为RLP Hash。 Ethereum 在底层存储中特意选择了专门存储和读取[k, v] 键值对的第三方数据库，[k, v] 中的v 就是某个结构体对象的RLP编码值([]byte)，k大多数情况就是v的RLP编码后的SHA-3哈希值
+常用数据类型 哈希值和地址 big.Int
+区块是交易的集合
+Receipt的PostState保存了创建该Receipt对象时，整个Block内所有“帐户”的当时状态。
+
+Bloom Filter概念定义可见wikipedia，它可用来快速验证一个新收到的对象是否处于一个已知的大量对象集合之中。这里Receipt的Bloom，被用以验证某个给定的Log是否处于Receipt已有的Log数组中。
+
+
+Swarm是一个用于以太坊的分布式文件存储项目。
