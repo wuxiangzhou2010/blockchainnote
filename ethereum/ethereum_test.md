@@ -50,14 +50,6 @@ Interactive with Geth node
 
     Json-RCP/ http ws 
 
-Private network
-
-- modify genesis.json
-- Creating the rendezvous point
-- Starting up your member nodes
-- Running a private miner
-
-
 required port 
 ```
 
