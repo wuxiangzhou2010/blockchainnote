@@ -62,3 +62,4 @@ refer:
 [miner](https://github.com/ethereum-mining/ethminer)
 
 [ethereum wiki](https://github.com/ethereum/wiki/wiki)
+[setup-ethereum-private-network-on-mac](https://yushuangqi.com/blog/2017/setup-ethereum-private-network-on-mac.html)
