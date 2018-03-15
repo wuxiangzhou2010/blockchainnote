@@ -3,7 +3,8 @@
 
 #### From source 
 [Install and compile geth ethereum](https://www.youtube.com/watch?v=1ZTQaXSENNs)
-[you can get the latest go](../build/go,md)
+
+[you can get the latest go](../../go/go.md)
 ```
 sudo apt-get install golang make -y
 
