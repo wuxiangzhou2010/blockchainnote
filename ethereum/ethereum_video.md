@@ -1,11 +1,11 @@
 [Dan's Intro to How Ethereum Works](https://www.youtube.com/watch?v=-SMliFtoPn8&t=4s)
 - hash 
-- Merkel tree/ hash of hash
+- Merkel tree/ hashes of hashes /Merkel proofs
 - blockchain add some data and hash together
 - 共识算法 Proof work (racing)
 
 
-etherrum block structure
+ethereum block structure
 
     timestamp
     list of transactions
@@ -17,6 +17,11 @@ etherrum block structure
     Nonce
     Gas used 
     reward
+
+    
+    state root
+    transaction root
+    receipts root
 
 transaction structure
     
