@@ -1,9 +1,10 @@
 ## Ethereum source code analysis
 
 #### rlp: Recursive Length Prefix
+#### whisper
 #### p2p
 - NAT
-- discover
+- discover/discv5
 - peer
     
 #### trie  
@@ -60,11 +61,14 @@ types/big number/bit/hex manipulation/file descriptor limit/monotonic timer /com
 
 #### compression
 
- run length encoding 
+ Package rle implements the run-length encoding used for Ethereum data
 
 #### consensus:
+
+Package consensus implements different Ethereum consensus engines.
 - clique proof-of-authority
 - ethash pow 
+
 interfaces
 
 #### console
@@ -77,7 +81,8 @@ interfaces
 - types :   header struct/nonce struct/
             Block --> header uncles transactions hash
             Transaction
-            Receipt        
+            Receipt   
+- bloombits            
 - vm
 #### eth
 
@@ -144,7 +149,6 @@ type Config struct {
 
 #### ethclient
 
-   trie implements Merkle Patricia Tries.
 #### les
 
     les implements the Light Ethereum Subprotocol.
@@ -160,4 +164,5 @@ type Config struct {
 
 #### vendor 
     
-    
+## Architecture
+http://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/architecture.html
