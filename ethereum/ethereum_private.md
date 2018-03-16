@@ -63,3 +63,27 @@ refer:
 
 [ethereum wiki](https://github.com/ethereum/wiki/wiki)
 [setup-ethereum-private-network-on-mac](https://yushuangqi.com/blog/2017/setup-ethereum-private-network-on-mac.html)
+
+
+
+
+1. 
+
+geth --datadir "$ETH_HOME/youtube1" init "$ETH_HOME/genesis.json"
+geth --datadir "$ETH_HOME/youtube1" --networkid 1234 console 2>console.log
+admin.peers
+admin.addPeer("enode://6bf90e342078573304537e6f59da2e5ead6c4d380994ffd98bd425a80853ef18bb0944c18200553568ade6cb4c47f0f2efbaf4991ac165733b9dfd21a0a0c1fb@[::]:30304?discport=0")
+admin.nodeInfo
+eth,blockNumber
+
+//geth attach /root/eth/youtube1/geth.ipc
+2.
+
+geth --datadir "$ETH_HOME/youtube1-a" init "$ETH_HOME/genesis.json"
+
+
+geth --datadir "$ETH_HOME/youtube1-a" --port 30304 --nodiscover --networkid 1234  console 2>console.log
+\
+personal.newAccount()
+miner.setEtherbase("0x6019067f35d8f7fcc2094644b18a2b02364900eb")
+miner.start(1)
