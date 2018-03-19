@@ -46,6 +46,9 @@ geth attach /root/testdir/data/geth.ipc
 > eth.accounts
 > personal.newAccount("mypassword")
 > web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
+> miner.setEtherbase("0xd65f5ba9d88a6c67a5dfcb70c38c02165cbb07d0")
+> miner.start(1)
+>
 ```
 ...
 
