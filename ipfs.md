@@ -9,4 +9,4 @@ ipfs init
 ipfs id
 ipfs daemon
 ipfs id
-http://localhost:5001/webui
+web ui `http://localhost:5001/webui`
