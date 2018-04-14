@@ -1,18 +1,18 @@
-assert 
+# solidity
+
+assert
 ganache
 truffle-hdwallet-provider
-mocha fucntions 
+mocha fucntions
 
     it              run  a test and make an assertion 
     describe        groups together 'it' fucntions
     beforeEach      execute some general setup code
 
-        () => 
+        () =>
         async wait
 
-
-
-solidity 
+solidity
 
     function modifier
 

@@ -1,5 +1,5 @@
+# Blockchain
 
-Blockchain
 P2P
 
 BitCoin and Ethereum
@@ -13,7 +13,4 @@ string
 address
 int/uint
 
-
 public/private/internal/external
-
-

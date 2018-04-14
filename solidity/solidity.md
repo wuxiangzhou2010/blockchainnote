@@ -1,17 +1,22 @@
-## Solidity 
+# Solidity
 
-#### Three type of Comment 
+## Three type of Comment
+
 - single-line comments (`//`)
 - multi-line comments (`/* ... */`)
 - `///` or `/** ...*/`
 
-#### Import
- In solidity, you can reference other solidity source files so you can use them in your current source files. 
-```
+## Import
+
+ In solidity, you can reference other solidity source files so you can use them in your current source files.
+
+``` sol
 import "./token.sol";
 import "./Token.sol" as token;
 ```
-#### Value types
+
+## Value types
+
 - Address
 - Integer
 - boolean

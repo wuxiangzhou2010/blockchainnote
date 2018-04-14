@@ -1,6 +1,7 @@
-## Private network
+# Private network
 
-### modify `genesis.json`
+## modify `genesis.json`
+
 ```json
 {
 "config": {
@@ -25,24 +26,32 @@
   "timestamp"  : "0x00"
 }
 ```
-### Creating the rendezvous point
+
+## Creating the rendezvous point
+
 ```sh
 cd /root/testdir/data
 geth --datadir=/root/testdir/data init /root/testdir/genesis.json
 bootnode --genkey=boot.key
 bootnode --nodekey=boot.key
 ```
-### Starting up member nodes
+
+## Starting up member nodes
+
 ```sh
 geth --datadir=/root/testdir/data --bootnodes=enode://148f3....@10.1.1.1:3031
 ```
-### Running a private miner
+
+## Running a private miner
+
 ```sh
 geth --datadir=/root/testdir/data --mine --minerthreads=1 --etherbase=0x..
 ```
-### create account and check balance
+
+## create account and check balance
+
 ```sh
-geth attach /root/testdir/data/geth.ipc 
+geth attach /root/testdir/data/geth.ipc
 > eth.accounts
 > personal.newAccount("mypassword")
 > web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
@@ -50,11 +59,11 @@ geth attach /root/testdir/data/geth.ipc
 > miner.start(1)
 >
 ```
+
 ...
 
-- write and deploy the contract 
+- write and deploy the contract
 - interact with the contract
-
 
 refer:
 
@@ -67,10 +76,7 @@ refer:
 [ethereum wiki](https://github.com/ethereum/wiki/wiki)
 [setup-ethereum-private-network-on-mac](https://yushuangqi.com/blog/2017/setup-ethereum-private-network-on-mac.html)
 
-
-
 [create a local private multi-node Ethereum network](https://www.youtube.com/watch?v=49KK8MbMggQ&t=1581s)
-1. 
 
 geth --datadir "$ETH_HOME/youtube1" init "$ETH_HOME/genesis.json"
 geth --datadir "$ETH_HOME/youtube1" --networkid 1234 console 2>console.log
@@ -80,10 +86,8 @@ admin.nodeInfo
 eth.blockNumber
 
 //geth attach /root/eth/youtube1/geth.ipc
-2.
 
 geth --datadir "$ETH_HOME/youtube1-a" init "$ETH_HOME/genesis.json"
-
 
 geth --datadir "$ETH_HOME/youtube1-a" --port 30304 --nodiscover --networkid 1234  console 2>console.log
 

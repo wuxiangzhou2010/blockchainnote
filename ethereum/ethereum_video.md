@@ -1,9 +1,11 @@
+# Videos
+
 [Dan's Intro to How Ethereum Works](https://www.youtube.com/watch?v=-SMliFtoPn8&t=4s)
-- hash 
+
+- hash
 - Merkel tree/ hashes of hashes /Merkel proofs
 - blockchain add some data and hash together
 - 共识算法 Proof work (racing)
-
 
 ethereum block structure
 
@@ -15,21 +17,20 @@ ethereum block structure
     miner address
     difficulty
     Nonce
-    Gas used 
+    Gas used
     reward
 
-    
     state root
     transaction root
     receipts root
 
 transaction structure
-    
-    from 
-    to 
-    Gas price 
-    Gas limit 
-    value 
+
+    from
+    to
+    Gas price
+    Gas limit
+    value
     data
     signature
 

@@ -1,35 +1,41 @@
-## Ethereum source code analysis
+# Ethereum source code analysis
 
-#### rlp: Recursive Length Prefix
-#### whisper
-#### p2p
+## rlp: Recursive Length Prefix
+
+## whisper
+
+## p2p
+
 - NAT
 - discover/discv5
 - peer
-    
-#### trie  
+
+## trie
 
     trie implements Merkle Patricia Tries.
 
 - [ethereum-merkle-tree-explanation](https://ethereum.stackexchange.com/questions/15288/ethereum-merkle-tree-explanation)
 - [merkling-in-ethereum](https://blog.ethereum.org/2015/11/15/merkling-in-ethereum/)
 
-#### crypto  
-- sha3  
+## crypto
+
+- sha3
    Ethereum's "sha3_256" and "sha3_512" hashes are not standard sha3 hashes, but a variant often referred to as "Keccak-256" and "Keccak-512" in other contexts.
 
 - elliptic curve  ECDSA
 
-#### accounts: 
+## accounts
+
 account and wallet 硬件钱包， keystore
 
-```
+``` go
 type Account struct {
     Address common.Address
     URL URL
 }
 ```
-```
+
+``` go
 type Wallet interface {
     Open(passphrase string) error
     Close() error
@@ -47,128 +53,130 @@ type Backend interface {
 
 ```
 
-#### bmt :   
-    
-    binary merkle tree implementation 
+## bmt
 
-#### cmd:    
-    
+    binary merkle tree implementation
+
+## cmd
+
     编译相关 geth bootnode evm swarm
 
-#### common 
+## common
 
 types/big number/bit/hex manipulation/file descriptor limit/monotonic timer /compiler
 
-#### compression
+## compression
 
  Package rle implements the run-length encoding used for Ethereum data
 
-#### consensus:
+## consensus
 
 Package consensus implements different Ethereum consensus engines.
+
 - clique proof-of-authority
-- ethash pow 
+- ethash pow
 
 interfaces
 
-#### console
+## console
 
-#### contracts:
-    
-#### core:
+## contracts
+
+## core
+
 - asm： deal with EVM assembly  instructions
 - state: statedb  trie
 - types :   header struct/nonce struct/
             Block --> header uncles transactions hash
             Transaction
-            Receipt   
-- bloombits            
+            Receipt
+- bloombits
 - vm
-#### eth
+
+## eth
 
 API
 Ethereum api
     PublicEthereumAPI provides an API to access Ethereum full node-related information.
 peer api
-miner api 
+miner api
 debug api
 admin api
 
 default config
 
+``` go
 type Config struct {
-	// The genesis block, which is inserted if the database is empty.
-	// If nil, the Ethereum main net block is used.
-	Genesis *core.Genesis `toml:",omitempty"`
+    // The genesis block, which is inserted if the database is empty.
+    // If nil, the Ethereum main net block is used.
+    Genesis *core.Genesis `toml:",omitempty"`
 
-	// Protocol options
-	NetworkId uint64 // Network ID to use for selecting peers to connect to
-	SyncMode  downloader.SyncMode
-	NoPruning bool
+    // Protocol options
+    NetworkId uint64 // Network ID to use for selecting peers to connect to
+    SyncMode  downloader.SyncMode
+    NoPruning bool
 
-	// Light client options
-	LightServ  int `toml:",omitempty"` // Maximum percentage of time allowed for serving LES requests
-	LightPeers int `toml:",omitempty"` // Maximum number of LES client peers
+    // Light client options
+    LightServ  int `toml:",omitempty"` // Maximum percentage of time allowed for serving LES requests
+    LightPeers int `toml:",omitempty"` // Maximum number of LES client peers
 
-	// Database options
-	SkipBcVersionCheck bool `toml:"-"`
-	DatabaseHandles    int  `toml:"-"`
-	DatabaseCache      int
-	TrieCache          int
-	TrieTimeout        time.Duration
+    // Database options
+    SkipBcVersionCheck bool `toml:"-"`
+    DatabaseHandles    int  `toml:"-"`
+    DatabaseCache      int
+    TrieCache          int
+    TrieTimeout        time.Duration
 
-	// Mining-related options
-	Etherbase    common.Address `toml:",omitempty"`
-	MinerThreads int            `toml:",omitempty"`
-	ExtraData    []byte         `toml:",omitempty"`
-	GasPrice     *big.Int
+    // Mining-related options
+    Etherbase    common.Address `toml:",omitempty"`
+    MinerThreads int            `toml:",omitempty"`
+    ExtraData    []byte         `toml:",omitempty"`
+    GasPrice     *big.Int
 
-	// Ethash options
-	Ethash ethash.Config
+    // Ethash options
+    Ethash ethash.Config
 
-	// Transaction pool options
-	TxPool core.TxPoolConfig
+    // Transaction pool options
+    TxPool core.TxPoolConfig
 
-	// Gas Price Oracle options
-	GPO gasprice.Config
+    // Gas Price Oracle options
+    GPO gasprice.Config
 
-	// Enables tracking of SHA3 preimages in the VM
-	EnablePreimageRecording bool
+    // Enables tracking of SHA3 preimages in the VM
+    EnablePreimageRecording bool
 
-	// Miscellaneous options
-	DocRoot string `toml:"-"`
+    // Miscellaneous options
+    DocRoot string `toml:"-"`
 }
+```
 
-#### ethdb
+## ethdb
 
     use level db, 增删改查
 
-##### ethstats
+### ethstats
 
     ethstats implements the network stats reporting service
 
-#### ethclient
+## ethclient
 
-#### les
+## les
 
     les implements the Light Ethereum Subprotocol.
 
-#### miners
+## miners
 
     Package miner implements Ethereum block creation and mining
 
-#### rpc 
-- http 
-- unix ipc 
-- websocket rpc 
+## rpc
 
-#### vendor 
-    
-## Architecture
-http://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/architecture.html
+- http
+- unix ipc
+- websocket rpc
 
+## vendor
 
-
+## [Architecture](http://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/architecture.html)
 
 [[以太坊源代码分析] I.区块和交易，合约和虚拟机](http://blog.csdn.net/teaspring/article/details/75389151?locationNum=3&fps=1)
 
@@ -179,6 +187,5 @@ Ethereum 中具体使用的哈希算法，就是对某个类型对象的RLP编�
 Receipt的PostState保存了创建该Receipt对象时，整个Block内所有“帐户”的当时状态。
 
 Bloom Filter概念定义可见wikipedia，它可用来快速验证一个新收到的对象是否处于一个已知的大量对象集合之中。这里Receipt的Bloom，被用以验证某个给定的Log是否处于Receipt已有的Log数组中。
-
 
 Swarm是一个用于以太坊的分布式文件存储项目。
