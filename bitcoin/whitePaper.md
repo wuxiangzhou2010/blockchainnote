@@ -12,3 +12,7 @@
 with the posssibility of reversal, the need for trust spreads. Merchants must be wary of their customers, hassling them for more information than they would otherwise need. A certain percentage of fraud is accepted as unavoidable.
 
 transactions section
+
+To modify a past block, an attacker would have to redo the proof of work of the block and all blocks after it and then catch up with and supass the work of the honest nodes.
+
+Nodes always consider the longest chain to be the correct one and will keep working on exending it.
