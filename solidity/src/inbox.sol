@@ -16,13 +16,13 @@ contract Inbox {
         message = newMessage;
     }
 
-    //function name / function type(public view) /return value
-    // function types public anyone can call this function.
-    //private  only this contract can call this function.
-    //view this function returns data and does not modify the contract's data
-    //constant this function returns data and does not mofify the contract's data
-    // pure function will not modify or even read the contract's data
-    //payable when someone call this function they might send ether along
+    // function name / function type(public view) /return value
+    // public -- anyone can call this function.
+    // private --  only this contract can call this function.
+    // view -- this function returns data and does not modify the contract's data
+    // constant -- this function returns data and does not modify the contract's data
+    // pure -- function will not modify or even read the contract's data
+    // payable -- when someone call this function they might send ether along
     function getMessage() public view returns (string) {
         return message;
     }
