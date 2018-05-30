@@ -3,7 +3,7 @@
 ordered by importance
 
 - [golang udemy](https://www.udemy.com/go-the-complete-developers-guide/) 91%
-- [solidity Etherrum and smart contract Udemy](https://www.udemy.com/ethereum-and-solidity-the-complete-developers-guide/learn/v4/overview) 61%
+- [solidity Ethereum and smart contract Udemy](https://www.udemy.com/ethereum-and-solidity-the-complete-developers-guide/learn/v4/overview) 61%
 
 - [algorithm udemy](https://www.udemy.com/coding-interview-bootcamp-algorithms-and-data-structure) 91%
 
