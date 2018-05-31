@@ -107,6 +107,14 @@ contract is connected to a network, need to deploy to a network. class --> insta
 - strongly typed
 - similar to Javascript
 
+variables
+
+string
+address
+int/uint
+
+public/private/internal/external
+
 ### solidity is simple and not take much time, but not the applocation (html,css)
 
 ### solidity--> compiler --> byte code and ABI(for javascript to interactive with)
@@ -115,9 +123,91 @@ contract is connected to a network, need to deploy to a network. class --> insta
 
 ## [IDE](https://remix.ethereum.org)
 
-variables
-string
-address
-int/uint
+public `get function` is already create automatically
 
-public/private/internal/external
+## transaction to create contract
+
+- sender --- is the one who want to create the contract
+- to field --- is left as blank
+- data --- compiled byte code of the contract
+- value --- initial value
+
+if you want to change anyting one the blockchain, you need to spend some amount of money.
+
+- calling a function: can return data, runs instantly, free to do, can not modify the contract's data
+- send a transaction to the function:  returns the transaction hash, take time to execute, cost money, not modify data.
+
+## ether vs wei
+
+dollar and cents
+
+## Gas and transaction
+
+- break each operation and find the GAS cost
+
+    ADD 3
+    MUL 5
+    SUB 3
+    EQ 3
+
+- gas price, amount of wei willing to offer for a Gas
+
+    startGas/Gaslimit Uints of Gas this transaction consume
+
+## 12 words mnemonic BIP39 mnemonic Algorithm
+
+generate a series of account public address and private key
+
+[bip39](https://iancoleman.io/bip39/)
+
+## [get more ether](http://faucet.rinkeby.io)
+
+## truffle
+
+contract creation/local testing/deployment --> rinkeby network
+
+- undergoing rapid development
+- someting don't work
+- somethings don't work at all
+- stuff breaks -patience is required
+
+## custom node project
+
+contract creation/ local testing/ deployment --> rinkeby
+
+editor
+version control
+
+- setup the solidity compiler to build our contract
+- Moca testing
+- setup a deploy script to compile + deploy our contract.
+
+## Project
+
+```js
+npm install --save solc
+npm install --save moca ganache-cli web3@1.0.0-beta.26
+```
+
+## web3 version
+
+v0.x.x --> v1.x.x
+callbacks fir async code --> support for promise + async/await
+
+## web3 providers
+
+`Web3` constructor--> `web3` instance(need setup the `provider`)--> communicate with test network
+
+## Mocha functions
+
+- it  -- run a test and make an assertion
+- describe -- group together `it` functions
+- beforeEach -- execute some general setup code
+
+call a function on a contract/call(), send()
+
+## [infura API](https://infura.io/)
+
+```sh
+npm install --save truffle-hdwallet-provider
+```
