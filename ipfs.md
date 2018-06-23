@@ -10,3 +10,22 @@ ipfs id
 ipfs daemon
 ipfs id
 web ui `http://localhost:5001/webui`
+
+location based addressing --> content based addressing
+
+## ipfs object
+
+    data
+    links
+
+## commit
+
+    parent
+    object
+
+## application:
+
+wikipedia
+dtube
+
+it uses a `DHT` to store data, a `MerkleDAG` to give it structure, and a `bittorrent` mechanism to exchange data.
