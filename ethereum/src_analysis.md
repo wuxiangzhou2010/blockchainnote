@@ -2,12 +2,17 @@
 
 ## rlp: Recursive Length Prefix
 
+    The only purpose of RLP is to encode structure; encoding specific atomic data types (eg. strings, ints, floats) is left up to higher-order protocols;
+
 ## whisper
+
+    In a nutshell whisper is a communication protocol for DApps to communicate with each other.
 
 ## p2p
 
-- NAT
-- discover/discv5
+- NAT  provides access to common network port mapping protocols.
+- discover implements the Node Discovery Protocol.
+- discv5 implements the RLPx v5 Topic Discovery Protocol.
 - peer
 
 ## trie
@@ -26,7 +31,15 @@
 
 ## accounts
 
+- abi
+- keystore
+- usbwallet
+
+accounts implements high level Ethereum account management. 
+
 account and wallet 硬件钱包， keystore
+
+abi implements the Ethereum ABI (Application Binary Interface). 
 
 ``` go
 type Account struct {
@@ -97,7 +110,7 @@ interfaces
 
 API
 Ethereum api
-    PublicEthereumAPI provides an API to access Ethereum full node-related information.
+    Public EthereumAPI provides an API to access Ethereum full node-related information.
 peer api
 miner api
 debug api
@@ -183,6 +196,7 @@ type Config struct {
 RLP（Recursive Length Prefix）编码, 它可以将一个任意嵌套的字节数组([]byte)，编码成一个“展平”无嵌套的[]byte。1 byte取值范围0x00 ～ 0xff，可以表示任意字符，所以[]byte可以线性的表示任意的数据。最简单比如一个字符串，如果每个字符用ASCII码的二进制表示，整个字符串就变成一个[]byte。 RLP 编码其实提供了一种序列化的编码方法，无论输入是何种嵌套形式的元素或数组，编码输出形式都是[]byte。RLP是可逆的，它提供了互逆的编码、解码方法。
 Ethereum 中具体使用的哈希算法，就是对某个类型对象的RLP编码值做了SHA3哈希运算，可称为RLP Hash。 Ethereum 在底层存储中特意选择了专门存储和读取[k, v] 键值对的第三方数据库，[k, v] 中的v 就是某个结构体对象的RLP编码值([]byte)，k大多数情况就是v的RLP编码后的SHA-3哈希值
 常用数据类型 哈希值和地址 big.Int
+
 区块是交易的集合
 Receipt的PostState保存了创建该Receipt对象时，整个Block内所有“帐户”的当时状态。
 
