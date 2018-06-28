@@ -1,6 +1,6 @@
 # [ethereum-and-solidity](https://www.udemy.com/ethereum-and-solidity-the-complete-developers-guide/)
 
-1. what is etherrum?
+1. what is ethereum?
 2. [app#1]how do we interact with ethereum
 3. [app#2]Tooling, Deployment, Testing of Apps with Ethereum.
 4. [app#3]Building a multiple page app with ethereum
@@ -192,7 +192,7 @@ npm install --save moca ganache-cli web3@1.0.0-beta.26
 ## web3 version
 
 v0.x.x --> v1.x.x
-callbacks fir async code --> support for promise + async/await
+callbacks for async code --> support for promise + async/await
 
 ## web3 providers
 
