@@ -203,3 +203,11 @@ Receipt的PostState保存了创建该Receipt对象时，整个Block内所有“�
 Bloom Filter概念定义可见wikipedia，它可用来快速验证一个新收到的对象是否处于一个已知的大量对象集合之中。这里Receipt的Bloom，被用以验证某个给定的Log是否处于Receipt已有的Log数组中。
 
 Swarm是一个用于以太坊的分布式文件存储项目。
+
+哈希值在数学上的唯一性使得它可以用作某个对象的全局唯一标识符。
+
+Gas, 是Ethereum里对所有活动进行消耗资源计量的单位。
+
+Ethereum 中每个交易(transaction，tx)对象在被放进block时，都是经过数字签名的，这样可以在后续传输和处理中随时验证tx是否经过篡改。Ethereum 采用的数字签名是椭圆曲线数字签名算法(Elliptic Cure Digital Signature Algorithm,ECDSA)。tx的转帐转出方地址，就是对该tx对象作ECDSA签名计算时所用的公钥publicKey,Ethereum中的数字签名计算过程所生成的签名(signature), 是一个长度为65bytes的字节数组，它被截成三段放进tx中，前32bytes赋值给成员变量R, 再32bytes赋值给S，末1byte赋给V
+
+Ethereum 里的哈希函数，用的是SHA-3，256 bits；数据(数组)的序列化，用的是RLP编码，所以所有对象，数组的哈希算法，实际用的RLP + SHA-3。数字签名算法，使用了椭圆曲线数字签名算法(ECDSA)
