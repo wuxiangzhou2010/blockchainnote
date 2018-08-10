@@ -115,6 +115,8 @@ docker run -it -p 30305:30303 -v /root/docker/docker3:/root/.ethereum  -v /root/
 ### [JavaScript-Console](https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console)
 
 ```sh
+
+geth --datadir "" --verbosity 3 console --ipcpath geth-data1.ipc -rpc --rpcport "8545" --rpcaddr "0.0.0.0" --rpcapi "admin,eth,miner,net,personal,web3"
 geth console
 geth attach
 geth attach ipc:/some/custom/path
