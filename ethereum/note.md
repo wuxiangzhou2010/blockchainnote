@@ -116,12 +116,12 @@ docker run -it -p 30305:30303 -v /root/docker/docker3:/root/.ethereum  -v /root/
 
 ```sh
 
-geth --datadir "" --verbosity 3 console --ipcpath geth-data1.ipc -rpc --rpcport "8545" --rpcaddr "0.0.0.0" --rpcapi "admin,eth,miner,net,personal,web3"
+geth --datadir "" --verbosity 3 console --ipcpath geth-data1.ipc -rpc --rpcport "8545" --rpcaddr "0.0.0.0" --rpcapi "admin,eth,miner,net,personal,web3,txpool"
 geth console
 geth attach
 geth attach ipc:/some/custom/path
-geth attach http://191.168.1.1:8545
-geth attach ws://191.168.1.1:8546
+geth attach http://192.168.1.1:8545
+geth attach ws://192.168.1.1:8546
 ```
 
 ### (JavaScript-API)https://github.com/ethereum/wiki/wiki/JavaScript-API）
