@@ -183,9 +183,22 @@ type Config struct {
 
 ## rpc
 
-- http
-- unix ipc
+- http rpc
+  
+  暴露的地址不同， 能够访问的地址也不同， localhost, 127.0.0.1 只能本地访问。
+  --rpcapi
+  --rpcaddr
+
 - websocket rpc
+- unix ipc
+
+```go
+func (n *Node) startIPC(apis []rpc.API) error
+
+func (srv *Server) ServeHTTP(w http.ResponseWriter, r *http.Request)
+func (s *Server) ServeSingleRequest(ctx context.Context, codec ServerCodec, options CodecOption)
+func (s *Server) serveRequest(ctx context.Context, codec ServerCodec, singleShot bool, options CodecOption) error
+```
 
 ## vendor
 
