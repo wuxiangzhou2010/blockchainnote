@@ -35,11 +35,11 @@
 - keystore
 - usbwallet
 
-accounts implements high level Ethereum account management. 
+accounts implements high level Ethereum account management.
 
 account and wallet 硬件钱包， keystore
 
-abi implements the Ethereum ABI (Application Binary Interface). 
+abi implements the Ethereum ABI (Application Binary Interface).
 
 ``` go
 type Account struct {
@@ -210,6 +210,53 @@ func (s *Server) serveRequest(ctx context.Context, codec ServerCodec, singleShot
 
     常用数据类型 哈希值和地址 big.Int
 
+`私钥、公钥和地址是如何生成的？`
+
+大体来说，地址的生成的流程是：`私钥 -> 公钥 -> 地址`。因此地址的生成需要三步：
+
+    生成一个随机的私钥（32字节）
+    通过私钥生成公钥（64字节）
+    通过公钥得到地址（20字节）
+
+||||
+-|-|-|-
+-|比特币 |以太坊
+私钥位数|32字节|64位16进制字符（32字节）
+私钥生成公钥算法|ECDSA-secp256k1|secp256k1
+公钥生成hash function|SHA-256， RIPEMD-160哈希值，BASE58， 加上前缀|Keccak-256哈希
+公钥位数|65字节?|64字节
+地址位数|20字节|20字节|
+区块大小限制|1MB|gasLimit
+区块产生时间|10分钟|12s
+|
+
+私钥是一个随机数，随机选取一个32字节的数.
+私钥可以理解为一串随机数， 通过一定算法生成公钥.
+公钥经过hash 算法后生成地址.
+
+非压缩公钥，生成的公钥共65字节， 其中一个字节是0x04，其中32个字节是X坐标，另外32个字节是Y坐标
+基于椭圆加密的原理，由私钥是可以计算出公钥的，再由公钥经过一系列数字签名运算就会得到比特币钱包地址.
+
+一个以太坊地址就代表着一个以太坊账户，地址是账户的标识.
+账户以地址为索引，地址由公钥衍生而来，取公钥的最后20个字节.
+
+### refer
+
+- [[Ethereum基础]：账户、地址、私钥和公钥](http://blog.luoyuanhang.com/2018/04/17/eth-basis-accounts-address-pubkey-prikey/)
+- [密钥、地址、钱包](http://zhibimo.com/read/wang-miao/mastering-bitcoin/Chapter04.html)
+
+#### keystore 文件：
+
+- address
+- crypto
+
+  - cipher
+  - ciphertext
+  - cipherparams
+  - kdf
+  - kdfparams
+  - mac
+
 ``` go
 # /commons/types.go
 const (
@@ -231,7 +278,7 @@ type Address [AddressLength]byte
 
     Receipt的PostState保存了创建该Receipt对象时，整个Block内所有“帐户”的当时状态。
 
-    想得到父区块(parentBlock)对象，直接解析这个ParentHash是不够的， 而是要将ParentHash同其他字符串([]byte)组合成合适的key([]byte), 去kv数据库里查询相应的value才能解析得到。 
+    想得到父区块(parentBlock)对象，直接解析这个ParentHash是不够的， 而是要将ParentHash同其他字符串([]byte)组合成合适的key([]byte), 去kv数据库里查询相应的value才能解析得到。
 
 - Bloom Filter
 
