@@ -321,3 +321,5 @@ QTUM 将以太坊 EVM 搭建在比特币 UTXO 架构上，通过轻钱包就可�
 
 [以太坊私链与智能合约部署入门教程](https://forum.qtum.org/topic/127/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE%E4%B8%8E%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E9%83%A8%E7%BD%B2%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
 [How to Build a Private Ethereum Blockchain](https://media.consensys.net/how-to-build-a-private-ethereum-blockchain-fbf3904f337)
+
+[Ethereum can be viewed as a transaction-based state machine](https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf)
