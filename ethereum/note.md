@@ -325,3 +325,20 @@ QTUM 将以太坊 EVM 搭建在比特币 UTXO 架构上，通过轻钱包就可�
 [Ethereum can be viewed as a transaction-based state machine](https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf)
 
 [Blockchain at Berkeley](https://www.youtube.com/channel/UC5sgoRfoSp3jeX4DEqKLwKg/playlists)
+
+### nonce
+
+为了防止交易的重播攻击，每笔交易必须有一个nonce随机数，针对每一个账户nonce都是从0开始，当nonce为0的交易处理完之后，才会处理nonce为1的交易，并依次加1的交易才会被处理.以下是nonce使用的几条规则：
+
+    当nonce太小，交易会被直接拒绝。
+    当nonce太大，交易会一直处于队列之中
+    当发送一个比较大的nonce值，然后补齐开始nonce到那个值之间的nonce，那么交易依旧可以被执行。
+    当交易处于queue中时停止geth客户端，那么交易queue中的交易会被清除掉。
+
+- [Internal transaction and transaction](https://dewone.zendesk.com/hc/zh-cn/articles/360005205873-Transactions-%E5%92%8CInternal-Transactions%E7%9A%84%E5%8C%BA%E5%88%AB)
+
+### 区块儿浏览器
+
+区块链浏览器一：https://etherscan.io
+
+区块链浏览器二：https://www.etherchain.org
