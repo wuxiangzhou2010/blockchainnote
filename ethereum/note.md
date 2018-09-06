@@ -4,9 +4,19 @@
 
 modules:
 
-`Dapp api` and `management api`
+`Dapp api` and additional `management api`
 
 [management api](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)
+
+### using json rcp and console
+
+- enable management api
+
+``` sh
+geth --ipcapi admin,eth,miner --rpcapi eth,web3 --rpc
+```
+
+  http rpc, ipc, websocket
 
 - admin
 
@@ -67,16 +77,6 @@ modules:
 - net
 - rpc
 - web3
-
-using json rcp and console
-
-- enable management api
-
-``` sh
-geth --ipcapi admin,eth,miner --rpcapi eth,web3 --rpc
-```
-
-  http rpc, ipc, websocket
 
 ### [accounts]((https://github.com/ethereum/go-ethereum/wiki/Managing-your-accounts))
 
