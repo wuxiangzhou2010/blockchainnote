@@ -2,6 +2,8 @@
 
 ordered by importance
 
+## courses
+
 - [golang udemy](https://www.udemy.com/go-the-complete-developers-guide/) 91%
 - [solidity Ethereum and smart contract Udemy](https://www.udemy.com/ethereum-and-solidity-the-complete-developers-guide/learn/v4/overview) 61%
 
@@ -12,3 +14,20 @@ ordered by importance
 
 - IPFS and [file coin 官方文档](https://filecoin.io/filecoin.pdf)   50%
 - Js/nodejs/npm
+
+## coins
+
+- [ipfs](./ipfs.md)
+- [bitshare](./bitshare.md)
+- [stroj](./stroj/stroj.md)
+- [solidity](./solidity/solidity.md)
+  - [solidity note](./solidity/solidity_note.md)
+- [bitcoin white paper](./bitcoin/whitePaper.md)
+- ethereum
+  - [note](./ethereum/note.md)
+  - [ethereum_private](./ethereum/ethereum_private.md)
+  - [ethereum_temp](./ethereum/ethereum_temp.md)
+  - [ethereum_test](./ethereum/ethereum_test.md)
+  - [ethereum_video](./ethereum/ethereum_video.md)
+  - [goLevelDB](./ethereum/goLevelDB.md)
+  - [src_analysis](./ethereum/src_analysis.md)
