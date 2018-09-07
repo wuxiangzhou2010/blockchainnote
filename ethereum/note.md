@@ -119,8 +119,14 @@ docker run -it -p 30305:30303 -v /root/docker/docker3:/root/.ethereum  -v /root/
 geth --datadir "" --verbosity 3 console --ipcpath geth-data1.ipc -rpc --rpcport "8545" --rpcaddr "0.0.0.0" --rpcapi "admin,eth,miner,net,personal,web3,txpool"
 geth console
 geth attach
+
+# ipc
 geth attach ipc:/some/custom/path
+
+# http rpc
 geth attach http://192.168.1.1:8545
+
+# websocket
 geth attach ws://192.168.1.1:8546
 ```
 
@@ -135,21 +141,21 @@ genesis.json 的内容如下：
 
 ``` json
 {
-"config": {
-        "chainId": 123456,
-        "homesteadBlock": 0,
-        "eip155Block": 0,
-        "eip158Block": 0
-},
-"nonce": "0x0000000000000042",
-"difficulty": "0x020000",
-"mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-"coinbase": "0x0000000000000000000000000000000000000000",
-"timestamp": "0x00",
-"parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-"extraData": "0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa",
-"gasLimit": "0x4c4b40",
-"alloc": {}
+    "config": {
+            "chainId": 123456,
+            "homesteadBlock": 0,
+            "eip155Block": 0,
+            "eip158Block": 0
+    },
+    "nonce": "0x0000000000000042",
+    "difficulty": "0x020000",
+    "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "coinbase": "0x0000000000000000000000000000000000000000",
+    "timestamp": "0x00",
+    "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "extraData": "0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa",
+    "gasLimit": "0x4c4b40",
+    "alloc": {}
 }
 ```
 
@@ -183,41 +189,51 @@ geth-run
 
 ### 2.4 Geth JavaScript控制台环境使用说明
 
-    创建新账号
-    personal.newAccount()
-    或者 personal.newAccount("123456")
+```js
+// 创建新账号
+personal.newAccount()
+// 或者
+personal.newAccount("123456")
 
-    查看节点信息
-    admin.nodeInfo
+// 查看节点信息
+admin.nodeInfo
 
-    挖矿
-    开始挖矿 miner.start(1)
-    停止挖矿 miner.stop()
+// 挖矿
+// 开始挖矿 
+miner.start(1)
+// 停止挖矿 
+miner.stop()
 
-    查看当前矿工账号
-    eth.coinbase 默认为第一个账户
+// 查看当前矿工账号
+eth.coinbase // 默认为第一个账户
 
-    修改矿工账号
-    miner.setEtherbase(eth.accounts[1])
+// 修改矿工账号
+miner.setEtherbase(eth.accounts[1])
 
-    查看账户信息
-    eth.accounts[0]
+// 查看账户信息
+eth.accounts[0]
 
-    查看账户余额
-    eth.getBalance(eth.accounts[0])
-    或者 web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
+// 查看账户余额
+eth.getBalance(eth.accounts[0])
+// 或者
+web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
 
-    解锁账号
-    personal.unlockAccount(eth.accounts[0])
-    使用账户资金前都需要先解锁账号
+// 解锁账号
+personal.unlockAccount(eth.accounts[0])
+// 使用账户资金前都需要先解锁账号
 
-    转账eth.sendTransaction({from:eth.accounts[0],to:"0x587e57a516730381958f86703b1f8e970ff445d9",value:web3.toWei(3,"ether")})
-    使用 txpool.status 可以看到交易状态
+// 转账
+eth.sendTransaction({from:eth.accounts[0],to:"0x587e57a516730381958f86703b1f8e970ff445d9",value:web3.toWei(3,"ether")})
 
-    查看区块数据
-    eth.blockNumber
-    eth.getTransaction("0x0c59f431068937cbe9e230483bc79f59bd7146edc8ff5ec37fea6710adcab825")
-    eth.getBlock(1) 通过区块号查看区块
+// 看到交易状态
+txpool.status
+
+// 查看区块数据
+eth.blockNumber
+eth.getTransaction("0x0c59f431068937cbe9e230483bc79f59bd7146edc8ff5ec37fea6710adcab825")
+eth.getBlock(1) 
+// 通过区块号查看区块
+```
 
 ## 三、智能合约
 
