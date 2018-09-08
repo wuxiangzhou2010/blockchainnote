@@ -241,7 +241,7 @@ eth.getBlock(1)
 
 创建一个 Token.sol 文件,内容如下：
 
-``` solidity
+``` js
 contract Token {
     address issuer;
     mapping (address => uint) balances;
@@ -358,3 +358,14 @@ QTUM 将以太坊 EVM 搭建在比特币 UTXO 架构上，通过轻钱包就可�
 区块链浏览器一：https://etherscan.io
 
 区块链浏览器二：https://www.etherchain.org
+
+智能合约也是个账户，没有私钥，但是可以收到别人打过来的代币，作为中转账户使用
+
+收款：外部给智能合约转账为了接收Ether，(fallback)回退函数必须标记为payable。
+如果没有这样的函数，合约不能通过常规transactions接收Ether。
+
+``` js
+//这里的address指的是你要提现的账户地址
+//value代表了你要提现的金额
+ address.transfer(value);
+```
