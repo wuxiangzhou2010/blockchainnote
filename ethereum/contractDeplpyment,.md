@@ -184,3 +184,7 @@ QTUM 将以太坊 EVM 搭建在比特币 UTXO 架构上，通过轻钱包就可�
     当交易处于queue中时停止geth客户端，那么交易queue中的交易会被清除掉。
 
 ## [Internal transaction and transaction](https://dewone.zendesk.com/hc/zh-cn/articles/360005205873-Transactions-%E5%92%8CInternal-Transactions%E7%9A%84%E5%8C%BA%E5%88%AB)
+
+## example
+
+https://segmentfault.com/a/1190000012365997
