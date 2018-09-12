@@ -14,3 +14,9 @@ However, there are also limitations:
     2. Leveldb was originally designed by Google to be a disk backed memory database. As long as most of it can fit into memory, it performs very well, but as more and more disk access is required, performance can degrade. Facebook's RocksDB tries to address some of these issues + multi threaded background compaction, but its still a fairly new thing and being in C makes portability hard.
 
 - [which-databases-do-the-ethereum-clients-use-and-why](https://ethereum.stackexchange.com/questions/824/which-databases-do-the-ethereum-clients-use-and-why)
+
+## [goleveldb](https://github.com/syndtr/goleveldb)
+
+- path
+
+ https://github.com/ethereum/go-ethereum/tree/master/ethdb
