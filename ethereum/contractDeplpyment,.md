@@ -47,12 +47,13 @@ contract Token {
 
 ## 压缩合约代码
 
-命令行下执行 `cat Token.sol | tr '\n' ' '`
+- 命令行下执行 `cat Token.sol | tr '\n' ' '`
 
-这条命令将代码中的换行符替换成空格，这样我们的代码就只有一行了。命令执行成功后将回显复制下来。
+        这条命令将代码中的换行符替换成空格，这样我们的代码就只有一行了。命令执行成功后将回显复制下来。
 
-将合约代码保存为一个变量
-回到Geth JavaScript 控制台，执行如下命令，等于号后面的内容就是我们刚才复制下来的压缩后的合约代码。
+- 将合约代码保存为一个变量
+
+        回到Geth JavaScript 控制台，执行如下命令，等于号后面的内容就是我们刚才复制下来的压缩后的合约代码。
 
 ``` js
 var tokenSource = 'contract Token { address issuer; mapping (address => uint) balances; event Issue(address account, uint amount); event Transfer(address from, address to, uint amount); function Token() { issuer = msg.sender; } function issue(address account, uint amount) { if (msg.sender != issuer) throw; balances[account] += amount; } function transfer(address to, uint amount) { if (balances[msg.sender] < amount) throw; balances[msg.sender] -= amount; balances[to] += amount; Transfer(msg.sender, to, amount); } function getBalance(address account) constant returns (uint) { return balances[account]; } }';
@@ -66,7 +67,6 @@ var tokenSource = 'contract Token { address issuer; mapping (address => uint) ba
 ``` js
 var tokenCompiled = eth.compile.solidity(tokenSource);
 ```
-
 
 - 查看二进制代码
 
@@ -95,10 +95,10 @@ var token = contract.new(initializer)
 
 方法二
 
-若不成功，请参考 https://ethereum.stackexchange.com/questions/15435/how-to-compile-solidity-contracts-with-geth-v1-6 提供的替代方案
+若不成功，请参考 `https://ethereum.stackexchange.com/questions/15435/how-to-compile-solidity-contracts-with-geth-v1-6` 提供的替代方案
 
 - unlock 一个account
-- http://remix.ethereum.org  --> Compile --> Details --> web3Deploy
+- `http://remix.ethereum.org` --> Compile --> Details --> web3Deploy
 
 ``` js
 var tokenContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"account","type":"address"},{"name":"amount","type":"uint256"}],"name":"issue","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"to","type":"address"},{"name":"amount","type":"uint256"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"account","type":"address"}],"name":"getBalance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"account","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"Issue","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"from","type":"address"},{"indexed":false,"name":"to","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"Transfer","type":"event"}]);
@@ -114,7 +114,6 @@ var token = tokenContract.new(
     }
 })
 ```
-
 
 ## 3.3 与合约进行交互
 
@@ -151,7 +150,6 @@ QTUM 将以太坊 EVM 搭建在比特币 UTXO 架构上，通过轻钱包就可�
 
 [Blockchain at Berkeley](https://www.youtube.com/channel/UC5sgoRfoSp3jeX4DEqKLwKg/playlists)
 
-
 ## 合约与一般账户的区别
 
 智能合约也是个账户，没有私钥，但是可以收到别人打过来的代币，作为中转账户使用
@@ -169,10 +167,9 @@ QTUM 将以太坊 EVM 搭建在比特币 UTXO 架构上，通过轻钱包就可�
 
 ## 区块儿浏览器
 
-区块链浏览器一: https://etherscan.io
+区块链浏览器一: `https://etherscan.io`
 
-区块链浏览器二: https://www.etherchain.org
-
+区块链浏览器二: `https://www.etherchain.org`
 
 ## nonce
 
@@ -185,6 +182,6 @@ QTUM 将以太坊 EVM 搭建在比特币 UTXO 架构上，通过轻钱包就可�
 
 ## [Internal transaction and transaction](https://dewone.zendesk.com/hc/zh-cn/articles/360005205873-Transactions-%E5%92%8CInternal-Transactions%E7%9A%84%E5%8C%BA%E5%88%AB)
 
-## example
+## Contract examples
 
-https://segmentfault.com/a/1190000012365997
+`https://segmentfault.com/a/1190000012365997`
