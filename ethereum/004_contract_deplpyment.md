@@ -45,14 +45,6 @@ contract Token {
 
 ## 编译与部署
 
-### get solc
-
-``` sh
-pacman -S solidity
-```
-
-`https://github.com/ethereum/solidity/releases`
-
 ### 压缩合约代码
 
 - 命令行下执行 `cat Token.sol | tr '\n' ' '`
@@ -164,12 +156,6 @@ token.getBalance()
  address.transfer(value);
 ```
 
-## 区块儿浏览器
-
-区块链浏览器一: `https://etherscan.io`
-
-区块链浏览器二: `https://www.etherchain.org`
-
 ## [Internal transaction and transaction](https://dewone.zendesk.com/hc/zh-cn/articles/360005205873-Transactions-%E5%92%8CInternal-Transactions%E7%9A%84%E5%8C%BA%E5%88%AB)
 
 ## Contract examples
@@ -179,3 +165,7 @@ token.getBalance()
 ## [Contract-Tutorial](https://github.com/ethereum/go-ethereum/wiki/Contract-Tutorial)
 
 ## 向合约转账如果合约没有payable函数则不能执行。
+
+## 合约中的属性用来声明合约的状态，而合约中的方法则提供修改状态的访问接口
+
+以太坊的智能合约默认是拒绝来自任何地址的转账
