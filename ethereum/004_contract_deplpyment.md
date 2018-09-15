@@ -45,6 +45,14 @@ contract Token {
 
 ## 编译与部署
 
+### get solc
+
+``` sh
+pacman -S solidity
+```
+
+`https://github.com/ethereum/solidity/releases`
+
 ### 压缩合约代码
 
 - 命令行下执行 `cat Token.sol | tr '\n' ' '`
@@ -169,3 +177,5 @@ token.getBalance()
 `https://segmentfault.com/a/1190000012365997`
 
 ## [Contract-Tutorial](https://github.com/ethereum/go-ethereum/wiki/Contract-Tutorial)
+
+## 向合约转账如果合约没有payable函数则不能执行。
