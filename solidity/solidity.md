@@ -1,5 +1,26 @@
 # Solidity
 
+## get solc
+
+``` sh
+pacman -S solidity
+```
+
+`https://github.com/ethereum/solidity/releases`
+
+## solc
+
+``` sh
+solc --help
+solc helloworld.sol
+# output EVM assembly
+solc --asm helloworld.sol
+# output in bytecode (hex)
+solc --bin helloworld.sol
+
+# --optimize
+```
+
 ## Three type of Comment
 
 - single-line comments (`//`)
