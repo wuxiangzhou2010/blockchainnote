@@ -28,7 +28,7 @@ get_slot_time()方法，获得未来的第n个区块生产时间槽的时刻
 }
 ```
 
-https://blog.csdn.net/ggq89/article/details/80188930
-https://blog.csdn.net/ggq89/article/details/80068306
-http://docs.bitshares.org/bitshares/dpos.html
-https://www.leiphone.com/news/201706/JfsBmaf6Y0ZtV11R.html
+- `https://blog.csdn.net/ggq89/article/details/80188930`
+- `https://blog.csdn.net/ggq89/article/details/80068306`
+- `http://docs.bitshares.org/bitshares/dpos.html`
+- `https://www.leiphone.com/news/201706/JfsBmaf6Y0ZtV11R.html`
