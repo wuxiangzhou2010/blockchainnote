@@ -38,12 +38,46 @@ import "./Token.sol" as token;
 
 ## Value types
 
-- Address
-- Integer
-- boolean
-- Byte Arrays
+- string
+- bool
+- address
+- int(int8, int16 ... int256),
 
- refer to [Components](ttps://soliditylang.com/documentation/language-specifications.html)
+  - int == int256
+
+- uint (uint8, uint16 ... uint256)
+  
+  - uint == uint256
+  
+- fixed/ufixed
+
+refer to: [Components](ttps://soliditylang.com/documentation/language-specifications.html)
+
+## reference types
+
+- fixed array
+
+int[3] --> [1,2,3], bool[2] --> [false, true]
+
+- dynamic array
+
+int[] --> [1,2,3], bool[] --> [false, true]
+
+- mapping
+
+Collection of key value pairs.
+
+mapping(string => string)
+mapping(int => bool)
+
+- struct
+
+## message
+
+- msg.data
+- msg.gas
+- msg.sender
+- msg.value
 
 ## function modifier
 
@@ -90,3 +124,5 @@ contract Lottery {
 所以合约要接收ether，必须实现回退函数。
 
 refer to: `http://www.tryblockchain.org/14825685263030.html`
+
+## nested dynamic array is not implemented
