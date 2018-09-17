@@ -59,7 +59,7 @@ import "./Token.sol" as token;
   
 - fixed/ufixed
 
-refer to: [Components](ttps://soliditylang.com/documentation/language-specifications.html)
+<!-- refer to: [Components](https://soliditylang.com/documentation/language-specifications.html) -->
 
 ## reference types
 
@@ -76,6 +76,7 @@ int[] --> [1,2,3], bool[] --> [false, true]
 Collection of key value pairs.
 
 mapping(string => string)
+
 mapping(int => bool)
 
 - struct
@@ -126,17 +127,29 @@ contract Lottery {
 }
 ```
 
-每一个合约有且仅有一个没有名字的函数。这个函数无参数，也无返回值。如果调用合约时，没有匹配上任何一个函数(或者没有传哪怕一点数据)，就会调用默认的回退函数。
+## 回退函数（fallback function）
+
+每一个合约有且仅有一个没有名字的函数。这个函数无参数，也无返回值。如果调用合约时，没有匹配上任何一个函数(或者没有传哪怕一点数据)，就会调用默认的`回退函数`。
 
 一个没有定义一个回退函数的合约。如果接收ether，会触发异常，并返还ether（solidity v0.4.0开始）。
-所以合约要接收ether，必须实现回退函数。
+所以`合约要接收ether，必须实现回退函数`。
 
 refer to: `http://www.tryblockchain.org/14825685263030.html`
 
-## nested dynamic array is not implemented
+## nested dynamic array is not implemented in solidity
 
-- this  指当前合约
+## this  指当前合约
 
-`https://blog.csdn.net/diandianxiyu_geek/article/details/77942459`
+- 深入理解Solidity : `https://blog.csdn.net/diandianxiyu_geek/article/details/77942459`
+- Solidity in Depth `https://solidity.readthedocs.io/en/develop/solidity-in-depth.html`
 
-`https://solidity.readthedocs.io/en/develop/types.html`
+The following statements are considered modifying the state:
+
+    Writing to state variables.
+    Emitting events.
+    Creating other contracts.
+    Using selfdestruct.
+    Sending Ether via calls.
+    Calling any function not marked view or pure.
+    Using low-level calls.
+    Using inline assembly that contains certain opcodes.
