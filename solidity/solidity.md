@@ -27,6 +27,14 @@ solc --bin helloworld.sol
 - multi-line comments (`/* ... */`)
 - `///` or `/** ...*/`
 
+## pragma
+
+``` js
+pragma solidity ^0.4.0
+```
+
+表达式遵循npm 使用规则
+
 ## Import
 
  In solidity, you can reference other solidity source files so you can use them in your current source files.
@@ -126,3 +134,9 @@ contract Lottery {
 refer to: `http://www.tryblockchain.org/14825685263030.html`
 
 ## nested dynamic array is not implemented
+
+- this  指当前合约
+
+`https://blog.csdn.net/diandianxiyu_geek/article/details/77942459`
+
+`https://solidity.readthedocs.io/en/develop/types.html`
