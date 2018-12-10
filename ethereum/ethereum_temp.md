@@ -30,7 +30,7 @@ THe "blockchain" is a database that store a record of every transaction that has
 
 ## technolody
 
-- technology for the developers `web3 js`.
+- technology for the developers `web3.js`.
 
 - for consumers `metamask/mist browser`
 
@@ -44,7 +44,7 @@ THe "blockchain" is a database that store a record of every transaction that has
 localhost 8545
 custom RPC
 
-## account
+## accounts
 
 account address
 public key
@@ -93,15 +93,19 @@ hash 64 character long 1.15 x 10^77
 
 ## contract
 
-- balance: amount of ether this account owns
-- storage: data storage for this contract
-- code Raw machine code for this contract
+smart contract: An accout controlled by code
+
+- balance:  amount of ether this account owns
+- storage:  data storage for this contract
+- code:     Raw machine code for this contract
 
 External account
 
 contract is connected to a network, need to deploy to a network. class --> instance
 
 ## solidity
+
+ABI and byte code
 
 - wirtten in `.sol` files
 - strongly typed
