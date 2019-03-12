@@ -2,11 +2,14 @@
 
 ## start ethereum
 
-``` sh
+```sh
 geth
 
 # the testnet
 geth --testnet --fast
+
+# rinkeby testnetwork
+geth --rinkeby --syncmode "light" console
 ```
 
 ### what happened
@@ -28,10 +31,10 @@ refer to: [Youtube video](https://www.youtube.com/watch?v=OTck7SLXTHY9)
 
 ## modify `genesis.json`
 
-新建文件夹，命名随意，在此文件夹下创建genesis.json文件和data文件夹
+新建文件夹，命名随意，在此文件夹下创建 genesis.json 文件和 data 文件夹
 genesis.json 的内容如下：
 
-``` js
+```js
 {
 "config": {
         "chainId": 15,
@@ -56,7 +59,7 @@ genesis.json 的内容如下：
 }
 ```
 
-``` sh
+```sh
 geth --datadir=/root/testdir/data init /root/testdir/genesis.json
 ```
 
@@ -77,7 +80,7 @@ geth --datadir data --networkid 123456 --rpc --rpccorsdomain "*" --nodiscover co
     rpc 表示启动rpc通信，可以进行智能合约的部署和调试
     console 表示启动命令行模式，可以在geth中执行命令
 
-执行成功后将进入区块链的JavaScript控制台环境
+执行成功后将进入区块链的 JavaScript 控制台环境
 geth-run
 
 ## create account and check balance
@@ -95,7 +98,7 @@ geth attach /root/testdir/data/geth.ipc
 - write and deploy the contract
 - interact with the contract
 
-``` sh
+```sh
 geth --datadir "$ETH_HOME/youtube1" init "$ETH_HOME/genesis.json"
 geth --datadir "$ETH_HOME/youtube1" --networkid 1234 console 2>console.log
 admin.peers
