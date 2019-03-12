@@ -14,7 +14,9 @@ const deploy = async () => {
   console.log("Attempting to deploy from account", accounts[0]);
 
   const result = await new web3.eth.Contract(JSON.parse(interface))
-    .deploy({ data: "0x" + bytecode, arguments: ["Hi there!"] })
+    //  to use  new verison of truffle-hdwallet-provider, need add "0x" + before bytecode and provider need to be closed with
+    // provider.engine.stop();
+    .deploy({ data: bytecode, arguments: ["Hi there!"] })
     .send({ gas: "1000000", from: accounts[0] });
 
   console.log("Contract deployed to", result.options.address);
